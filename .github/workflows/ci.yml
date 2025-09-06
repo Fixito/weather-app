@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+# Permissions recommandées pour la sécurité
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: 📚 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🔍 Type check
+        run: pnpm run typecheck
+
+      - name: 🎨 Check formatting
+        run: pnpm run format:check
+
+      - name: 🔧 Lint code
+        run: pnpm run lint
+
+      - name: 🏗️ Build project
+        run: pnpm run build
