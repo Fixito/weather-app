@@ -43,8 +43,8 @@ export default function DropdownUnits() {
       <DropdownMenuTrigger asChild>
         <Button
           variant='outline'
-          size='lg'
-          className='bg-secondary border-none'
+          size='sm'
+          className='bg-secondary focus-visible:ring-offset-background focus-visible:ring-ring border-none px-100 py-125 text-sm focus-visible:ring-[3px] focus-visible:ring-offset-2 sm:h-[43px]'
         >
           <img src={IconUnits} alt='' />
           Units
