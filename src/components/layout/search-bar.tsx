@@ -1,7 +1,7 @@
 import SearchIcon from '@/assets/images/icon-search.svg';
 
-import { Button } from './ui/button';
-import { Input } from './ui/input';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
 
 export default function SearchBar() {
   return (
@@ -23,7 +23,7 @@ export default function SearchBar() {
       <Button
         type='submit'
         size='lg'
-        className='focus-visible:ring-offset-background focus-visible:ring-primary text-md rounded-12 px-300 py-200 hover:bg-blue-700 focus-visible:ring-[5px] focus-visible:ring-offset-3'
+        className='focus-visible:ring-primary text-md rounded-12 px-300 py-200 hover:bg-blue-700'
       >
         Search
       </Button>

@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "prettier --write --cache .",
+    "format:check": "prettier --check --cache .",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
     "prepare": "husky"
@@ -17,14 +17,15 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --cache --fix",
-      "prettier --write"
+      "prettier --write --cache"
     ],
-    "*.css": "prettier --write",
-    "*.{md,json,yaml,yml}": "prettier --write"
+    "*.css": "prettier --write --cache",
+    "*.{md,json,yaml,yml}": "prettier --write --cache"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.13",
     "class-variance-authority": "^0.7.1",
